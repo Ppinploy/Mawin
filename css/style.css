@@ -1,0 +1,165 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #ffd6e7, #ffeef5);
+    overflow: hidden;
+}
+
+.container {
+    width: 90%;
+    max-width: 600px;
+    text-align: center;
+    position: relative;
+    z-index: 10;
+}
+
+.step {
+    display: none;
+}
+
+.step.active {
+    display: block;
+    animation: fadeIn 0.5s ease;
+}
+
+.cat-img {
+    width: 250px;
+    max-width: 80%;
+    margin-bottom: 20px;
+    border-radius: 15px;
+}
+
+h1 {
+    color: #ff4f81;
+    font-size: 28px;
+    margin-bottom: 25px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    border: none;
+    border-radius: 25px;
+    padding: 12px 25px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.btn-yes {
+    background: #ff4f81;
+    color: white;
+}
+
+.btn-yes:hover {
+    transform: scale(1.08);
+    background: #ff2f68;
+}
+
+.btn-no {
+    background: #ddd;
+    color: #555;
+}
+
+.btn-no:hover {
+    background: #ccc;
+}
+
+.final-message {
+    display: none;
+    animation: fadeIn 0.7s ease;
+}
+
+.final-message.active {
+    display: block;
+}
+
+.final-message p {
+    color: #ff4f81;
+    font-size: 20px;
+    line-height: 1.5;
+    margin-bottom: 10px;
+}
+
+.facebook-btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 13px 25px;
+    border-radius: 25px;
+    background: #ff4f81;
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    transition: 0.2s;
+}
+
+.facebook-btn:hover {
+    transform: scale(1.08);
+    background: #ff2f68;
+}
+
+.hearts::before {
+    content: "❤️ 💕 💗 💖 💓 💘";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    font-size: 30px;
+    word-spacing: 50px;
+    opacity: 0.25;
+    animation: floatHearts 8s linear infinite;
+    pointer-events: none;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes floatHearts {
+    from {
+        transform: translateY(100vh);
+    }
+
+    to {
+        transform: translateY(-100vh);
+    }
+}
+
+@media (max-width: 600px) {
+
+    h1 {
+        font-size: 22px;
+    }
+
+    .cat-img {
+        width: 200px;
+    }
+
+    .btn {
+        font-size: 16px;
+        padding: 10px 20px;
+    }
+}
